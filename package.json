@@ -40,5 +40,6 @@
   "devDependencies": {
     "gh-pages": "^6.1.1",
     "styled-components": "^6.1.8"
-  }
+  },
+  "homepage": "https://fozyns.github.io/Shvydkyi-FE-Pro-React17.10.2023/"
 }
