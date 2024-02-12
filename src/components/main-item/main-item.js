@@ -11,6 +11,7 @@ const Button = styled.button`
   margin-top: 20px;
   width: 70px;
   height: 30px;
+  padding: 0;
   transition: transform 0.3s ease;
 
   &:active {
