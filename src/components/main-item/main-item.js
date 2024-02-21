@@ -25,11 +25,12 @@ const Div = styled.div`
   align-items: center;
 `;
 
-function MainItem({ img }) {
+function MainItem({ img, onClick }) {
   const [state, setState] = useState(0);
 
   const counter = () => {
     setState(state + 1);
+    onClick();
   };
 
   return (
