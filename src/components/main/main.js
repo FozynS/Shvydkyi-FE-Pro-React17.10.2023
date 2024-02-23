@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import MainItem from "../main-item/main-item";
 import styled from "styled-components";
 
@@ -43,11 +43,11 @@ function Main() {
     setVotes(newVotes);
   };
 
-  const calculateWinner = () => {
+  const calculateWinner = useMemo(() => {
     const maxVotes = Math.max(...votes);
     const winningIndex = votes.indexOf(maxVotes);
     return emoji[winningIndex]; 
-  };
+  }, [votes]); 
 
 
   return (
@@ -57,7 +57,7 @@ function Main() {
       ))}
       <Winner>
         <Button onClick={() => setShowResults(true)}>Show Results</Button>
-        {showResults && <div>Winner: <p style={{fontSize: '40px'}}>{calculateWinner()}</p></div>}
+        {showResults && <div>Winner: <p style={{fontSize: '40px'}}>{calculateWinner}</p></div>}
       </Winner>
     </Div>
   );
